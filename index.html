@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>智慧医疗 - 医生工作站原型 2026</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', 'Microsoft YaHei', sans-serif; background-color: #f3f4f6; }
+        .tab-active { border-bottom: 3px solid #3b82f6; color: #3b82f6; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .bubble-anim { transition: all 0.2s ease; cursor: pointer; }
+        .bubble-anim:hover { transform: scale(1.05); background-color: #dbeafe; }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.-bottom-6{bottom:-1.5rem}.-left-\[9px\]{left:-9px}.-right-6{right:-1.5rem}.bottom-10{bottom:2.5rem}.left-0{left:0px}.left-1\/2{left:50%}.left-2{left:0.5rem}.right-0{right:0px}.top-0{top:0px}.top-1\/2{top:50%}.top-2{top:0.5rem}.z-10{z-index:10}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-1{margin-left:0.25rem}.ml-2{margin-left:0.5rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-14{height:3.5rem}.h-2{height:0.5rem}.h-4{height:1rem}.h-6{height:1.5rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-full{height:100%}.h-px{height:1px}.min-h-screen{min-height:100vh}.w-1\/3{width:33.333333%}.w-2{width:0.5rem}.w-2\/5{width:40%}.w-4{width:1rem}.w-9{width:2.25rem}.w-full{width:100%}.w-px{width:1px}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-y-20{--tw-translate-y:5rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-y-0{--tw-translate-y:0px;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:spin 1s linear infinite}.cursor-pointer{cursor:pointer}.resize-none{resize:none}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-10{gap:2.5rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-gray-100 > :not([hidden]) ~ :not([hidden]){--tw-divide-opacity:1;border-color:rgb(243 244 246 / var(--tw-divide-opacity, 1))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.rounded-b-xl{border-bottom-right-radius:0.75rem;border-bottom-left-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-4{border-width:4px}.border-b{border-bottom-width:1px}.border-l-2{border-left-width:2px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.border-blue-100{--tw-border-opacity:1;border-color:rgb(219 234 254 / var(--tw-border-opacity, 1))}.border-blue-200{--tw-border-opacity:1;border-color:rgb(191 219 254 / var(--tw-border-opacity, 1))}.border-blue-500{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.border-blue-800\/50{border-color:rgb(30 64 175 / 0.5)}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity, 1))}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-red-100{--tw-border-opacity:1;border-color:rgb(254 226 226 / var(--tw-border-opacity, 1))}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.border-white\/20{border-color:rgb(255 255 255 / 0.2)}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.bg-blue-400{--tw-bg-opacity:1;background-color:rgb(96 165 250 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-blue-50\/20{background-color:rgb(239 246 255 / 0.2)}.bg-blue-50\/30{background-color:rgb(239 246 255 / 0.3)}.bg-blue-50\/50{background-color:rgb(239 246 255 / 0.5)}.bg-blue-500{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-blue-900\/40{background-color:rgb(30 58 138 / 0.4)}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-gray-50\/50{background-color:rgb(249 250 251 / 0.5)}.bg-green-600{--tw-bg-opacity:1;background-color:rgb(22 163 74 / var(--tw-bg-opacity, 1))}.bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity, 1))}.bg-red-500{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity, 1))}.bg-slate-600{--tw-bg-opacity:1;background-color:rgb(71 85 105 / var(--tw-bg-opacity, 1))}.bg-slate-700{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-slate-900\/50{background-color:rgb(15 23 42 / 0.5)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/10{background-color:rgb(255 255 255 / 0.1)}.bg-white\/50{background-color:rgb(255 255 255 / 0.5)}.bg-yellow-500{--tw-bg-opacity:1;background-color:rgb(234 179 8 / var(--tw-bg-opacity, 1))}.bg-green-100{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity, 1))}.bg-green-500{--tw-bg-opacity:1;background-color:rgb(34 197 94 / var(--tw-bg-opacity, 1))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-blue-600{--tw-gradient-from:#2563eb var(--tw-gradient-from-position);--tw-gradient-to:rgb(37 99 235 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-indigo-700{--tw-gradient-to:#4338ca var(--tw-gradient-to-position)}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.pl-4{padding-left:1rem}.pr-2{padding-right:0.5rem}.pt-4{padding-top:1rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-9xl{font-size:8rem;line-height:1}.text-\[10px\]{font-size:10px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-light{font-weight:300}.font-medium{font-weight:500}.font-normal{font-weight:400}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-normal{line-height:1.5}.leading-relaxed{line-height:1.625}.tracking-tighter{letter-spacing:-0.05em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-blue-100{--tw-text-opacity:1;color:rgb(219 234 254 / var(--tw-text-opacity, 1))}.text-blue-200{--tw-text-opacity:1;color:rgb(191 219 254 / var(--tw-text-opacity, 1))}.text-blue-300{--tw-text-opacity:1;color:rgb(147 197 253 / var(--tw-text-opacity, 1))}.text-blue-400{--tw-text-opacity:1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.text-blue-500{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-blue-700{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}.text-blue-800{--tw-text-opacity:1;color:rgb(30 64 175 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-green-500{--tw-text-opacity:1;color:rgb(34 197 94 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-indigo-100{--tw-text-opacity:1;color:rgb(224 231 255 / var(--tw-text-opacity, 1))}.text-indigo-300{--tw-text-opacity:1;color:rgb(165 180 252 / var(--tw-text-opacity, 1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.text-orange-600{--tw-text-opacity:1;color:rgb(234 88 12 / var(--tw-text-opacity, 1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-white\/10{color:rgb(255 255 255 / 0.1)}.text-white\/30{color:rgb(255 255 255 / 0.3)}.text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.text-yellow-950{--tw-text-opacity:1;color:rgb(66 32 6 / var(--tw-text-opacity, 1))}.text-green-700{--tw-text-opacity:1;color:rgb(21 128 61 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.opacity-30{opacity:0.3}.opacity-60{opacity:0.6}.opacity-70{opacity:0.7}.opacity-80{opacity:0.8}.opacity-100{opacity:1}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-green-100{--tw-shadow-color:#dcfce7;--tw-shadow:var(--tw-shadow-colored)}.outline-none{outline:2px solid transparent;outline-offset:2px}.ring-2{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-blue-100{--tw-ring-opacity:1;--tw-ring-color:rgb(219 234 254 / var(--tw-ring-opacity, 1))}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-blue-100:hover{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-700:hover{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-100:hover{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-200:hover{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.hover\:bg-green-500:hover{--tw-bg-opacity:1;background-color:rgb(34 197 94 / var(--tw-bg-opacity, 1))}.hover\:bg-green-700:hover{--tw-bg-opacity:1;background-color:rgb(21 128 61 / var(--tw-bg-opacity, 1))}.hover\:bg-white\/20:hover{background-color:rgb(255 255 255 / 0.2)}.hover\:bg-yellow-600:hover{--tw-bg-opacity:1;background-color:rgb(202 138 4 / var(--tw-bg-opacity, 1))}.hover\:text-blue-600:hover{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.hover\:text-gray-800:hover{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}.focus\:border-transparent:focus{border-color:transparent}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-blue-400:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(96 165 250 / var(--tw-ring-opacity, 1))}.focus\:ring-blue-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(59 130 246 / var(--tw-ring-opacity, 1))}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:block{display:block}@keyframes bounce{0%, 100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,0.2,1)}}.group:hover .group-hover\:animate-bounce{animation:bounce 1s infinite}</style>
+</head>
+<body class="min-h-screen overflow-hidden flex flex-col">
+<!-- 1. 顶部状态栏 -->
+<header class="bg-white border-b border-gray-200 h-14 flex items-center justify-between px-6 shrink-0">
+<div class="flex items-center gap-3">
+<svg aria-hidden="true" class="iconify text-blue-600 text-3xl iconify--solar" data-icon="solar:health-bold-duotone" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2 9.318c0 3.729 4.02 7.673 6.962 10.06C10.294 20.46 10.96 21 12 21s1.706-.54 3.038-1.621C17.981 16.99 22 13.047 22 9.317c0-6.23-5.5-8.556-10-3.743C7.5.761 2 3.087 2 9.318" fill="currentColor" opacity=".5"></path><path clip-rule="evenodd" d="M16.5 6.25a.75.75 0 0 1 .75.75v1.25h1.25a.75.75 0 0 1 0 1.5h-1.25V11a.75.75 0 0 1-1.5 0V9.75H14.5a.75.75 0 0 1 0-1.5h1.25V7a.75.75 0 0 1 .75-.75" fill="currentColor" fill-rule="evenodd"></path></svg>
+<h1 class="text-lg font-bold text-gray-800">MediFlow AI 医生工作站 <span class="text-xs font-normal text-gray-400 ml-2 mb-setting-empty">v0.0.0</span></h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 text-sm text-gray-600">
+<svg aria-hidden="true" class="iconify iconify--solar" data-icon="solar:calendar-date-outline" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M7 1.75a.75.75 0 0 1 .75.75v.763c.662-.013 1.391-.013 2.194-.013h4.112c.803 0 1.532 0 2.194.013V2.5a.75.75 0 0 1 1.5 0v.827q.39.03.739.076c1.172.158 2.121.49 2.87 1.238c.748.749 1.08 1.698 1.238 2.87q.074.562.107 1.23a.75.75 0 0 1 .019.46c.027.801.027 1.712.027 2.743v2.112c0 1.838 0 3.294-.153 4.433c-.158 1.172-.49 2.121-1.238 2.87c-.749.748-1.698 1.08-2.87 1.238c-1.14.153-2.595.153-4.433.153H9.944c-1.838 0-3.294 0-4.433-.153c-1.172-.158-2.121-.49-2.87-1.238c-.748-.749-1.08-1.698-1.238-2.87c-.153-1.14-.153-2.595-.153-4.433v-2.112c0-1.031 0-1.942.027-2.744a.75.75 0 0 1 .02-.46q.032-.667.106-1.229c.158-1.172.49-2.121 1.238-2.87c.749-.748 1.698-1.08 2.87-1.238q.35-.046.739-.076V2.5A.75.75 0 0 1 7 1.75m-4.237 8c-.013.653-.013 1.396-.013 2.25v2c0 1.907.002 3.262.14 4.29c.135 1.005.389 1.585.812 2.008s1.003.677 2.009.812c1.028.138 2.382.14 4.289.14h4c1.907 0 3.262-.002 4.29-.14c1.005-.135 1.585-.389 2.008-.812s.677-1.003.812-2.009c.138-1.027.14-2.382.14-4.289v-2c0-.854 0-1.597-.013-2.25zm18.405-1.5H2.832q.024-.284.058-.54c.135-1.005.389-1.585.812-2.008s1.003-.677 2.009-.812c1.028-.138 2.382-.14 4.289-.14h4c1.907 0 3.262.002 4.29.14c1.005.135 1.585.389 2.008.812s.677 1.003.812 2.009q.034.255.058.539m-10.381 4.057a.75.75 0 0 1 .463.693v4a.75.75 0 0 1-1.5 0v-2.19l-.22.22a.75.75 0 0 1-1.06-1.06l1.5-1.5a.75.75 0 0 1 .817-.163M14 13.75a.25.25 0 0 0-.25.25v2a.25.25 0 1 0 .5 0v-2a.25.25 0 0 0-.25-.25m-1.75.25a1.75 1.75 0 1 1 3.5 0v2a1.75 1.75 0 1 1-3.5 0z" fill="currentColor" fill-rule="evenodd"></path></svg>
+<span class="">xxxx年xx月xx日</span>
+<span class="ml-2 font-medium">xx:xx AM</span>
+</div>
+<div class="h-6 w-px bg-gray-200"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-sm font-semibold text-gray-800">张德民 主任医师</p>
+<p class="text-xs text-blue-500">呼吸内科一病区</p>
+</div>
+<img alt="Doctor Avatar" class="w-9 h-9 rounded-full ring-2 ring-blue-100" src="https://modao.cc/agent-py/media/generated_images/2026-03-10/48eef742174946d69d8131df9ccd682c.jpg"/>
+</div>
+</div>
+</header>
+<!-- 2. 患者上下文栏 -->
+<section class="bg-blue-600 text-white px-6 py-2 flex items-center justify-between shrink-0 shadow-lg">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<span class="text-xs opacity-80 text-blue-100">正在接诊:</span>
+<span class="text-xl font-bold">陈志强</span>
+<span class="bg-blue-500 px-2 py-0.5 rounded text-sm">男 / 48岁</span>
+</div>
+<div class="h-8 w-px bg-blue-400 opacity-30"></div>
+<div class="flex gap-6 text-sm">
+<div><span class="opacity-70">病案号:</span> <span class="ml-1 font-mono">ID202603100045</span></div>
+<div><span class="opacity-70">医保类型:</span> <span class="ml-1">城镇职工医保</span></div>
+<div><span class="opacity-70">过敏史:</span> <span class="ml-1 bg-red-500 px-2 rounded font-bold">青霉素、花粉过敏</span></div>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="bg-white/10 hover:bg-white/20 px-4 py-1.5 rounded-md text-sm transition font-medium border border-white/20">电子病历调阅</button>
+<button class="bg-yellow-500 hover:bg-yellow-600 px-4 py-1.5 rounded-md text-sm transition font-bold shadow-sm text-yellow-950">危急值提醒 (2)</button>
+</div>
+</section>
+<!-- 核心功能导航 -->
+<nav class="bg-white border-b border-gray-200 px-6 shrink-0">
+<div class="flex gap-10">
+<button class="py-4 text-sm font-bold transition-all text-gray-500" id="tab-overview" onclick="switchTab('overview')">1. 病人概况</button>
+<button class="py-4 text-sm font-bold hover:text-blue-600 transition-all tab-active" id="tab-diagnosis" onclick="switchTab('diagnosis')">2. 诊断录入</button>
+<button class="py-4 text-sm font-bold hover:text-blue-600 transition-all text-gray-500" id="tab-prescription" onclick="switchTab('prescription')">3. 医嘱处方</button>
+</div>
+</nav>
+<!-- 主体内容区 -->
+<main class="flex-1 overflow-hidden p-6 relative">
+<!-- Tab 1: 病人概况 -->
+<div class="h-full flex gap-6 hidden" id="content-overview">
+<!-- 左侧：基础信息与历程 -->
+<div class="w-1/3 flex flex-col gap-6 overflow-y-auto pr-2">
+<div class="bg-white rounded-xl shadow-sm p-5 border border-gray-100">
+<h3 class="font-bold text-gray-800 flex items-center gap-2 mb-4">
+<svg aria-hidden="true" class="iconify text-blue-500 iconify--solar" data-icon="solar:user-id-bold" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M10 4h4c3.771 0 5.657 0 6.828 1.172S22 8.229 22 12s0 5.657-1.172 6.828S17.771 20 14 20h-4c-3.771 0-5.657 0-6.828-1.172S2 15.771 2 12s0-5.657 1.172-6.828S6.229 4 10 4m3.25 5a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75m1 3a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75m1 3a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1-.75-.75M11 9a2 2 0 1 1-4 0a2 2 0 0 1 4 0m-2 8c4 0 4-.895 4-2s-1.79-2-4-2s-4 .895-4 2s0 2 4 2" fill="currentColor" fill-rule="evenodd"></path></svg>
+                        基础生命体征 (今日)
+                    </h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-gray-50 p-3 rounded-lg border border-gray-100">
+<p class="text-xs text-gray-500">血压 (mmHg)</p>
+<p class="text-xl font-bold text-blue-600">128/84</p>
+</div>
+<div class="bg-gray-50 p-3 rounded-lg border border-gray-100">
+<p class="text-xs text-gray-500">心率 (bpm)</p>
+<p class="text-xl font-bold text-green-600">72</p>
+</div>
+<div class="bg-gray-50 p-3 rounded-lg border border-gray-100">
+<p class="text-xs text-gray-500">体温 (°C)</p>
+<p class="text-xl font-bold text-orange-600">36.8</p>
+</div>
+<div class="bg-gray-50 p-3 rounded-lg border border-gray-100">
+<p class="text-xs text-gray-500">血糖 (mmol/L)</p>
+<p class="text-xl font-bold text-gray-600">5.4</p>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-5 border border-gray-100 flex-1">
+<h3 class="font-bold text-gray-800 flex items-center gap-2 mb-4">
+<svg aria-hidden="true" class="iconify text-blue-500 iconify--solar" data-icon="solar:history-bold" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M5.079 5.069c3.795-3.79 9.965-3.75 13.783.069c3.82 3.82 3.86 9.993.064 13.788s-9.968 3.756-13.788-.064a9.81 9.81 0 0 1-2.798-8.28a.75.75 0 1 1 1.487.203a8.31 8.31 0 0 0 2.371 7.017c3.245 3.244 8.468 3.263 11.668.064c3.199-3.2 3.18-8.423-.064-11.668c-3.243-3.242-8.463-3.263-11.663-.068l.748.003a.75.75 0 1 1-.007 1.5l-2.546-.012a.75.75 0 0 1-.746-.747L3.575 4.33a.75.75 0 1 1 1.5-.008zm6.92 2.18a.75.75 0 0 1 .75.75v3.69l2.281 2.28a.75.75 0 1 1-1.06 1.061l-2.72-2.72V8a.75.75 0 0 1 .75-.75" fill="currentColor" fill-rule="evenodd"></path></svg>
+                        历史就诊记录 (近1年)
+                    </h3>
+<div class="space-y-4">
+<div class="border-l-2 border-blue-500 pl-4 relative">
+<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-white"></div>
+<p class="text-xs text-gray-400">2026-01-15</p>
+<p class="text-sm font-semibold mt-1">急性支气管炎</p>
+<p class="text-xs text-gray-500 truncate">处方：阿奇霉素、止咳糖浆</p>
+</div>
+<div class="border-l-2 border-gray-200 pl-4 relative">
+<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-200 border-4 border-white"></div>
+<p class="text-xs text-gray-400">2025-11-20</p>
+<p class="text-sm font-semibold mt-1">年度常规体检</p>
+<p class="text-xs text-gray-500">轻度脂肪肝，建议低脂饮食</p>
+</div>
+<div class="border-l-2 border-gray-200 pl-4 relative">
+<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-200 border-4 border-white"></div>
+<p class="text-xs text-gray-400">2025-08-04</p>
+<p class="text-sm font-semibold mt-1">过敏性鼻炎</p>
+<p class="text-xs text-gray-500">喷鼻剂治疗</p>
+</div>
+</div>
+</div>
+</div>
+<!-- 右侧：语音识别与主诉 -->
+<div class="flex-1 bg-white rounded-xl shadow-sm p-6 border border-gray-100 flex flex-col">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h2 class="text-xl font-bold text-gray-800">本次就诊主诉</h2>
+<p class="text-sm text-gray-500">支持 AI 实时语音提取关键信息</p>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-red-50 text-red-600 rounded-full animate-pulse border border-red-100">
+<svg aria-hidden="true" class="iconify iconify--solar" data-icon="solar:microphone-large-bold" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="currentColor" fill-rule="evenodd"><path d="M3.692 10.372c.383 0 .693.313.693.698v1.86c0 4.239 3.41 7.675 7.615 7.675c4.206 0 7.615-3.436 7.615-7.675v-1.86c0-.386.31-.698.693-.698s.692.313.692.698v1.86c0 5.01-4.03 9.07-9 9.07s-9-4.06-9-9.07v-1.86c0-.386.31-.698.692-.698"></path><path d="M12 2C8.559 2 5.77 4.811 5.77 8.28v4.65c0 3.468 2.789 6.28 6.23 6.28s6.23-2.812 6.23-6.28V8.28C18.23 4.81 15.442 2 12 2M9.678 7.39a.7.7 0 0 1-.027-.986l.503.48l-.502-.48v-.001l.002-.002l.003-.003l.007-.008l.06-.055a2 2 0 0 1 .128-.099a2.3 2.3 0 0 1 .437-.232c.379-.154.93-.283 1.711-.283s1.332.129 1.711.283c.19.077.332.16.437.232a1.5 1.5 0 0 1 .188.154l.007.008l.003.003l.002.002s.001.001-.492.471l.493-.47c.263.28.25.722-.027.987a.69.69 0 0 1-.951 0l-.007-.005a1 1 0 0 0-.172-.088C13 7.22 12.63 7.116 12 7.116s-1 .104-1.192.182a1 1 0 0 0-.172.088l-.007.005a.69.69 0 0 1-.95 0m0 2.791a.7.7 0 0 1-.027-.986l.503.48l-.502-.48v-.002l.002-.001l.003-.004l.007-.007l.06-.056a2 2 0 0 1 .128-.098a2.3 2.3 0 0 1 .437-.232c.379-.154.93-.283 1.711-.283s1.332.129 1.711.283c.19.077.332.16.437.232a1.5 1.5 0 0 1 .188.154l.007.007l.003.004l.002.001v.001s.001.001-.492.47l.493-.469c.263.28.25.722-.027.986a.69.69 0 0 1-.951 0l-.007-.004a1 1 0 0 0-.172-.088C13 10.01 12.63 9.907 12 9.907s-1 .104-1.192.182a1 1 0 0 0-.172.088l-.007.005a.69.69 0 0 1-.95 0"></path></g></svg>
+<span class="text-xs font-bold uppercase tracking-wider">正在录音预览...</span>
+</div>
+</div>
+<!-- 语音关键词气泡区 -->
+<div class="mb-6 p-6 border-2 border-dashed border-blue-100 rounded-2xl bg-blue-50/30 flex flex-wrap gap-3">
+<p class="w-full text-xs text-blue-400 font-medium mb-2">识别到关键语义（点击快速录入）：</p>
+<span class="bubble-anim bg-white text-blue-700 px-4 py-2 rounded-full text-sm font-medium border border-blue-200 shadow-sm flex items-center gap-2" onclick="addTag('咳嗽持续一周')">
+<svg aria-hidden="true" class="iconify iconify--solar" data-icon="solar:add-circle-linear" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M15 12h-3m0 0H9m3 0V9m0 3v3" stroke-linecap="round"></path></g></svg> 咳嗽持续一周
+                    </span>
+<span class="bubble-anim bg-white text-blue-700 px-4 py-2 rounded-full text-sm font-medium border border-blue-200 shadow-sm flex items-center gap-2" onclick="addTag('由于受凉引起')">
+<svg aria-hidden="true" class="iconify iconify--solar" data-icon="solar:add-circle-linear" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M15 12h-3m0 0H9m3 0V9m0 3v3" stroke-linecap="round"></path></g></svg> 由于受凉引起
+                    </span>
+<span class="bubble-anim bg-white text-blue-700 px-4 py-2 rounded-full text-sm font-medium border border-blue-200 shadow-sm flex items-center gap-2" onclick="addTag('夜间咳痰频繁')">
+<svg aria-hidden="true" class="iconify iconify--solar" data-icon="solar:add-circle-linear" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M15 12h-3m0 0H9m3 0V9m0 3v3" stroke-linecap="round"></path></g></svg> 夜间咳痰频繁
+                    </span>
+<span class="bubble-anim bg-white text-blue-700 px-4 py-2 rounded-full text-sm font-medium border border-blue-200 shadow-sm flex items-center gap-2" onclick="addTag('咽部干痒')">
+<svg aria-hidden="true" class="iconify iconify--solar" data-icon="solar:add-circle-linear" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M15 12h-3m0 0H9m3 0V9m0 3v3" stroke-linecap="round"></path></g></svg> 咽部干痒
+                    </span>
+<span class="bubble-anim bg-white text-blue-700 px-4 py-2 rounded-full text-sm font-medium border border-blue-200 shadow-sm flex items-center gap-2" onclick="addTag('不伴发热')">
+<svg aria-hidden="true" class="iconify iconify--solar" data-icon="solar:add-circle-linear" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M15 12h-3m0 0H9m3 0V9m0 3v3" stroke-linecap="round"></path></g></svg> 不伴发热
+                    </span>
+<span class="bubble-anim bg-white text-blue-700 px-4 py-2 rounded-full text-sm font-medium border border-blue-200 shadow-sm flex items-center gap-2" onclick="addTag('胸闷感')">
+<svg aria-hidden="true" class="iconify iconify--solar" data-icon="solar:add-circle-linear" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M15 12h-3m0 0H9m3 0V9m0 3v3" stroke-linecap="round"></path></g></svg> 胸闷感
+                    </span>
+</div>
+<div class="flex-1 flex flex-col">
+<label class="block text-sm font-bold text-gray-700 mb-2">描述文本框 (已提取)</label>
+<textarea class="flex-1 w-full bg-gray-50 border border-gray-200 rounded-xl p-4 text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition resize-none leading-relaxed" id="chief-complaint" placeholder="请说出患者主诉或点击上方气泡内容..."></textarea>
+<div class="mt-4 flex justify-between items-center text-xs text-gray-400">
+<span>当前字数: <span id="word-count">0</span>/500</span>
+<div class="flex gap-4">
+<span class="flex items-center gap-1"><span class="iconify" data-icon="solar:check-circle-bold text-green-500"></span> AI 自动校对开启</span>
+<span class="flex items-center gap-1"><svg aria-hidden="true" class="iconify iconify--solar" data-icon="solar:history-linear" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><g fill="none"><path d="M12 8v4l2.5 2.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path><path d="m5.604 5.604l-.53-.53zM4.338 6.871l-.75.003a.75.75 0 0 0 .746.747zm2.542.762a.75.75 0 1 0 .007-1.5zM5.075 4.321a.75.75 0 1 0-1.5.008zm-1.248 6.464a.75.75 0 1 0-1.486-.204zm15.035-5.647c-3.82-3.82-9.993-3.86-13.788-.064l1.06 1.06c3.2-3.199 8.423-3.18 11.668.064zM5.138 18.862c3.82 3.82 9.993 3.86 13.788.064l-1.06-1.06c-3.2 3.199-8.423 3.18-11.668-.064zm13.788.064c3.795-3.795 3.756-9.968-.064-13.788l-1.06 1.06c3.244 3.245 3.263 8.468.064 11.668zM5.074 5.074L3.807 6.34L4.868 7.4l1.266-1.266zm-.74 2.547l2.546.012l.007-1.5l-2.545-.012zm.754-.754L5.075 4.32l-1.5.008l.013 2.545zM2.34 10.58a9.81 9.81 0 0 0 2.797 8.281l1.06-1.06a8.31 8.31 0 0 1-2.371-7.017z" fill="currentColor"></path></g></svg> 自动保存于 10:46:22</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tab 2: 诊断录入 -->
+<div class="h-full flex gap-6" id="content-diagnosis">
+<!-- 核心区：诊断 -->
+<div class="flex-1 flex flex-col gap-6 overflow-y-auto pr-2">
+<!-- 结构化表单 -->
+<div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+<h3 class="font-bold text-gray-800 flex items-center gap-2 mb-6 text-lg">
+<svg aria-hidden="true" class="iconify text-blue-500 iconify--solar" data-icon="solar:notes-bold" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m2.755 14.716l.517 1.932c.604 2.255.907 3.383 1.592 4.114a4 4 0 0 0 2.01 1.16c.976.228 2.104-.074 4.36-.678c2.254-.604 3.382-.906 4.113-1.591q.091-.086.176-.176a9 9 0 0 1-1.014-.15c-.696-.138-1.523-.36-2.501-.622l-.107-.029l-.025-.006c-1.064-.286-1.953-.524-2.663-.78c-.747-.27-1.425-.603-2.002-1.143a5.5 5.5 0 0 1-1.596-2.765c-.18-.769-.128-1.523.012-2.304c.134-.749.374-1.647.662-2.722l.535-1.994l.018-.07c-1.92.517-2.931.823-3.605 1.454a4 4 0 0 0-1.161 2.012c-.228.975.074 2.103.679 4.358" fill="currentColor"></path><path clip-rule="evenodd" d="m20.83 10.715l-.518 1.932c-.605 2.255-.907 3.383-1.592 4.114a4 4 0 0 1-2.01 1.161q-.145.034-.295.052c-.915.113-2.032-.186-4.064-.73c-2.255-.605-3.383-.907-4.114-1.592a4 4 0 0 1-1.161-2.011c-.228-.976.074-2.103.679-4.358l.517-1.932l.244-.905c.455-1.666.761-2.583 1.348-3.21a4 4 0 0 1 2.01-1.16c.976-.228 2.104.074 4.36.679c2.254.604 3.382.906 4.113 1.59a4 4 0 0 1 1.161 2.012c.228.976-.075 2.103-.679 4.358m-9.778-.91a.75.75 0 0 1 .919-.53l4.83 1.295a.75.75 0 1 1-.389 1.448l-4.83-1.294a.75.75 0 0 1-.53-.918m-.776 2.898a.75.75 0 0 1 .918-.53l2.898.777a.75.75 0 1 1-.388 1.448l-2.898-.776a.75.75 0 0 1-.53-.919" fill="currentColor" fill-rule="evenodd"></path></svg>
+                        诊疗录入
+                    </h3>
+<div class="space-y-6">
+<div>
+<label class="block text-sm font-bold text-gray-700 mb-2 flex items-center gap-2">
+                                初步诊断 (ICD-10) 
+                                <span class="bg-blue-100 text-blue-600 text-[10px] px-1.5 py-0.5 rounded">标准库</span>
+</label>
+<input class="w-full bg-blue-50/50 border border-blue-100 rounded-lg px-4 py-3 font-semibold text-blue-800 focus:ring-2 focus:ring-blue-500 outline-none" type="text" value="急性气管-支气管炎 (J20.900)"/>
+</div>
+<div>
+<label class="block text-sm font-bold text-gray-700 mb-2">现病史补充</label>
+<textarea class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-400 transition" rows="3">患者于1周前因受凉后出现咳嗽，阵发性。无明显发热，午后及夜间咳嗽较剧。咳少量白色泡沫样痰。</textarea>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-bold text-gray-700 mb-2">处理建议</label>
+<select class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 outline-none">
+<option>门诊观察</option>
+<option>建议住院</option>
+<option>转院治疗</option>
+<option>急诊留观</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-bold text-gray-700 mb-2">复诊提醒</label>
+<input class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 outline-none" type="date" value="2026-03-17"/>
+</div>
+</div>
+</div>
+</div>
+<!-- AI 推荐区 -->
+<div class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-xl shadow-md p-6 text-white">
+<div class="flex items-center gap-2 mb-4">
+<svg aria-hidden="true" class="iconify text-2xl iconify--solar" data-icon="solar:magic-stick-3-bold-duotone" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.845 3.845a2.883 2.883 0 0 0 0 4.077L5.432 9.51c.012-.014.555.503.568.49l4-4c.013-.013-.504-.556-.49-.568L7.922 3.845a2.883 2.883 0 0 0-4.077 0m1.288 11.462a.483.483 0 0 1 .9 0l.157.4a.48.48 0 0 0 .272.273l.398.157a.486.486 0 0 1 0 .903l-.398.158a.48.48 0 0 0-.272.273l-.157.4a.483.483 0 0 1-.9 0l-.157-.4a.48.48 0 0 0-.272-.273l-.398-.158a.486.486 0 0 1 0-.903l.398-.157a.48.48 0 0 0 .272-.274z" fill="currentColor" opacity=".5"></path><path d="M19.967 9.13a.483.483 0 0 1 .9 0l.156.399c.05.125.148.224.273.273l.398.158a.486.486 0 0 1 0 .902l-.398.158a.5.5 0 0 0-.273.273l-.156.4a.483.483 0 0 1-.9 0l-.157-.4a.5.5 0 0 0-.272-.273l-.398-.158a.486.486 0 0 1 0-.902l.398-.158a.5.5 0 0 0 .272-.273z" fill="currentColor" opacity=".2"></path><path d="M16.1 2.307a.483.483 0 0 1 .9 0l.43 1.095a.48.48 0 0 0 .272.274l1.091.432a.486.486 0 0 1 0 .903l-1.09.432a.5.5 0 0 0-.273.273L17 6.81a.483.483 0 0 1-.9 0l-.43-1.095a.5.5 0 0 0-.273-.273l-1.09-.432a.486.486 0 0 1 0-.903l1.09-.432a.5.5 0 0 0 .273-.274z" fill="currentColor" opacity=".7"></path><path d="M10.568 6.49c-.012.014-.555-.503-.568-.49l-4 4c-.013.013.504.556.49.568l9.588 9.587a2.883 2.883 0 1 0 4.078-4.077z" fill="currentColor"></path></svg>
+<h3 class="font-bold text-lg">AI 智能辅助联想</h3>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div class="bg-white/10 hover:bg-white/20 p-4 rounded-xl border border-white/20 transition cursor-pointer">
+<p class="text-xs opacity-70 mb-1">可能性 85%</p>
+<p class="font-bold">慢性支气管炎急性发作</p>
+<p class="text-[10px] mt-2 opacity-60">依据：吸烟史、季节性发作、咳嗽特点</p>
+</div>
+<div class="bg-white/10 hover:bg-white/20 p-4 rounded-xl border border-white/20 transition cursor-pointer">
+<p class="text-xs opacity-70 mb-1">可能性 12%</p>
+<p class="font-bold">支气管扩张伴感染</p>
+<p class="text-[10px] mt-2 opacity-60">建议：加做胸部HRCT</p>
+</div>
+<div class="bg-white/10 hover:bg-white/20 p-4 rounded-xl border border-white/20 transition cursor-pointer">
+<p class="text-xs opacity-70 mb-1">可能性 3%</p>
+<p class="font-bold">支气管哮喘</p>
+<p class="text-[10px] mt-2 opacity-60">观察：是否存在夜间阵发性喘息</p>
+</div>
+</div>
+</div>
+</div>
+<!-- 辅助区：检查申请 -->
+<div class="w-1/3 bg-white rounded-xl shadow-sm border border-gray-100 flex flex-col overflow-hidden">
+<div class="p-5 border-b border-gray-100 bg-gray-50 flex items-center justify-between">
+<h3 class="font-bold text-gray-800">检查辅助申请单</h3>
+<span class="text-xs text-blue-600 font-bold">已选: 2项</span>
+</div>
+<div class="p-5 flex-1 overflow-y-auto space-y-6">
+<!-- 检验类 -->
+<div>
+<p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">血液检验类</p>
+<ul class="space-y-2">
+<li class="flex items-center gap-3">
+<input checked="" class="w-4 h-4 rounded text-blue-600 focus:ring-blue-500" type="checkbox"/>
+<span class="text-sm font-medium text-gray-700">血常规(五分类)</span>
+</li>
+<li class="flex items-center gap-3">
+<input checked="" class="w-4 h-4 rounded text-blue-600 focus:ring-blue-500" type="checkbox"/>
+<span class="text-sm font-medium text-gray-700">C反应蛋白(CRP)</span>
+</li>
+<li class="flex items-center gap-3">
+<input class="w-4 h-4 rounded text-blue-600 focus:ring-blue-500" type="checkbox"/>
+<span class="text-sm font-medium text-gray-700">痰培养 + 药敏试验</span>
+</li>
+</ul>
+</div>
+<div class="h-px bg-gray-100"></div>
+<!-- 影像类 -->
+<div>
+<p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">医学影像类</p>
+<ul class="space-y-2">
+<li class="flex items-center gap-3">
+<input class="w-4 h-4 rounded text-blue-600 focus:ring-blue-500" type="checkbox"/>
+<span class="text-sm font-medium text-gray-700">胸部正侧位X线片</span>
+</li>
+<li class="flex items-center gap-3">
+<input class="w-4 h-4 rounded text-blue-600 focus:ring-blue-500" type="checkbox"/>
+<span class="text-sm font-medium text-gray-700">胸部CT平扫</span>
+</li>
+<li class="flex items-center gap-3">
+<input class="w-4 h-4 rounded text-blue-600 focus:ring-blue-500" type="checkbox"/>
+<span class="text-sm font-medium text-gray-700">常规心电图(12导联)</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="p-4 bg-gray-50 border-t border-gray-100">
+<button class="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg py-3 font-bold transition flex items-center justify-center gap-2">
+<svg aria-hidden="true" class="iconify iconify--solar" data-icon="solar:send-square-bold" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2s7.071 0 8.535 1.464C22 4.93 22 7.286 22 12s0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12m15.75 0a.75.75 0 0 1-.75.75h-5.19l1.72 1.72a.75.75 0 1 1-1.06 1.06l-3-3a.75.75 0 0 1 0-1.06l3-3a.75.75 0 1 1 1.06 1.06l-1.72 1.72H17a.75.75 0 0 1 .75.75m-10-4a.75.75 0 0 0-1.5 0v8a.75.75 0 0 0 1.5 0z" fill="currentColor" fill-rule="evenodd"></path></svg> 确认并下达检查
+                    </button>
+</div>
+</div>
+</div>
+<!-- Tab 3: 医嘱处方 -->
+<div class="h-full flex flex-col gap-6 hidden" id="content-prescription">
+<div class="flex-1 flex gap-6 overflow-hidden">
+<!-- 清单区 -->
+<div class="flex-1 bg-white rounded-xl shadow-sm border border-gray-100 flex flex-col">
+<div class="p-5 border-b border-gray-100 flex items-center justify-between">
+<h3 class="font-bold text-gray-800 flex items-center gap-2">
+<svg aria-hidden="true" class="iconify text-blue-500 text-xl iconify--solar" data-icon="solar:document-medicine-bold" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M4.172 3.172C3 4.343 3 6.229 3 10v4c0 3.771 0 5.657 1.172 6.828S7.229 22 11 22h2c3.771 0 5.657 0 6.828-1.172S21 17.771 21 14v-4c0-3.771 0-5.657-1.172-6.828S16.771 2 13 2h-2C7.229 2 5.343 2 4.172 3.172M12.75 6a.75.75 0 0 0-1.5 0v1.25H10a.75.75 0 1 0 0 1.5h1.25V10a.75.75 0 0 0 1.5 0V8.75H14a.75.75 0 0 0 0-1.5h-1.25zM8 13.25a.75.75 0 0 0 0 1.5h8a.75.75 0 0 0 0-1.5zm1 4a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5z" fill="currentColor" fill-rule="evenodd"></path></svg>
+                            门诊处方单
+                        </h3>
+<button class="bg-blue-50 text-blue-600 px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-blue-100 transition flex items-center gap-1">
+<svg aria-hidden="true" class="iconify iconify--solar" data-icon="solar:add-circle-linear" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M15 12h-3m0 0H9m3 0V9m0 3v3" stroke-linecap="round"></path></g></svg> 添加药品
+                        </button>
+</div>
+<div class="flex-1 overflow-y-auto">
+<table class="w-full text-left">
+<thead class="bg-gray-50 text-xs font-bold text-gray-500 sticky top-0">
+<tr>
+<th class="px-6 py-3">药品名称/规格</th>
+<th class="px-6 py-3">用法用量</th>
+<th class="px-6 py-3">频率</th>
+<th class="px-6 py-3 text-right">数量</th>
+<th class="px-6 py-3 text-right">操作</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-100 text-sm">
+<tr>
+<td class="px-6 py-4 font-medium text-gray-800">复方甲氧那明胶囊 (12粒/盒)</td>
+<td class="px-6 py-4">口服，一次2粒</td>
+<td class="px-6 py-4">每日3次</td>
+<td class="px-6 py-4 text-right">2 盒</td>
+<td class="px-6 py-4 text-right text-red-500 hover:underline cursor-pointer">删除</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium text-gray-800">头孢克肟分散片 (100mg*6s)</td>
+<td class="px-6 py-4">口服，一次1片</td>
+<td class="px-6 py-4">每日2次</td>
+<td class="px-6 py-4 text-right">2 盒</td>
+<td class="px-6 py-4 text-right text-red-500 hover:underline cursor-pointer">删除</td>
+</tr>
+<tr class="bg-blue-50/20">
+<td class="px-6 py-4 font-medium text-gray-800 italic">氯化钠注射液 (100ml:0.9g)</td>
+<td class="px-6 py-4">静脉滴注，100ml</td>
+<td class="px-6 py-4">每日1次</td>
+<td class="px-6 py-4 text-right">3 瓶</td>
+<td class="px-6 py-4 text-right text-red-500 hover:underline cursor-pointer">删除</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-6 bg-gray-50/50 border-t border-gray-100 flex items-center justify-between">
+<div class="flex gap-4 items-center">
+<div class="flex items-center gap-2 text-red-500 font-bold">
+<svg aria-hidden="true" class="iconify iconify--solar" data-icon="solar:shield-warning-bold" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M3 10.417c0-3.198 0-4.797.378-5.335c.377-.537 1.88-1.052 4.887-2.081l.573-.196C10.405 2.268 11.188 2 12 2s1.595.268 3.162.805l.573.196c3.007 1.029 4.51 1.544 4.887 2.081C21 5.62 21 7.22 21 10.417v1.574c0 5.638-4.239 8.375-6.899 9.536C13.38 21.842 13.02 22 12 22s-1.38-.158-2.101-.473C7.239 20.365 3 17.63 3 11.991zm9-3.167a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-1.5 0V8a.75.75 0 0 1 .75-.75M12 16a1 1 0 1 0 0-2a1 1 0 0 0 0 2" fill="currentColor" fill-rule="evenodd"></path></svg>
+<span class="text-xs">药物冲突检测：无</span>
+</div>
+</div>
+<div class="flex items-baseline gap-4">
+<span class="text-sm text-gray-500 uppercase tracking-tighter">处方总价</span>
+<span class="text-2xl font-black text-gray-800">¥ 146.50</span>
+</div>
+</div>
+</div>
+<!-- 操作区与机器人预览 -->
+<div class="w-2/5 flex flex-col gap-6">
+<!-- 操作主控 -->
+<div class="bg-indigo-600 rounded-2xl shadow-lg p-6 text-white overflow-hidden relative">
+<div class="relative z-10">
+<h3 class="font-bold text-lg mb-2">多端同步与执行</h3>
+<p class="text-xs text-indigo-100 mb-6 font-light">点击下方按钮将今日医嘱同步至机器人交互终端并自动打印</p>
+<button class="w-full hover:bg-green-500 hover:text-white rounded-xl py-4 font-bold flex items-center justify-center gap-3 shadow-xl transition-all active:scale-95 group bg-white text-indigo-600" onclick="simulateSync()">
+<span class="iconify text-2xl group-hover:animate-bounce" data-icon="solar:smart-home-robot-bold"></span>
+                                同步至机器人交互端
+                            </button>
+</div>
+<span class="iconify absolute -right-6 -bottom-6 text-9xl text-white/10" data-icon="solar:smart-home-robot-bold"></span>
+</div>
+<!-- 机器人交互端预览 (Card Flow) -->
+<div class="flex-1 bg-slate-900 rounded-2xl shadow-xl border-4 border-slate-800 p-1 flex flex-col overflow-hidden">
+<!-- 模拟屏幕顶部 -->
+<div class="bg-slate-800 px-4 py-2 flex justify-between items-center text-[10px] text-slate-400 font-mono">
+<span>TERMINAL: ROBOT_POCKET_V2</span>
+<span>CONNECTED <span class="text-green-500">●</span></span>
+</div>
+<div class="flex-1 p-4 bg-slate-900 flex flex-col" id="robot-preview">
+<p class="text-white font-bold text-lg mb-4 flex items-center justify-between">
+                                被服医嘱卡片
+                                <span class="text-[10px] bg-slate-700 px-2 py-0.5 rounded text-slate-300">滑动查看</span>
+</p>
+<!-- 卡片流 -->
+<div class="flex-1 relative flex items-center justify-center group">
+<div class="w-full h-full text-center flex flex-col items-center justify-center p-6 border border-slate-700 bg-slate-800 rounded-xl shadow-inner relative overflow-hidden">
+<div class="absolute top-2 left-2 px-2 py-1 bg-blue-500 text-[10px] font-bold text-white rounded">当前待执行</div>
+<div class="mb-4">
+<svg aria-hidden="true" class="iconify text-yellow-400 text-5xl mb-2 iconify--solar" data-icon="solar:pill-bold-duotone" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.99 13.602a6.796 6.796 0 0 1 9.612-9.611l6.407 6.407a6.796 6.796 0 1 1-9.61 9.611z" fill="currentColor" opacity=".5"></path><path d="m7.807 17.419l-1.253-1.254l.495-.095h.001l.014-.004q.022-.004.073-.017q.105-.024.316-.091c.281-.09.697-.243 1.21-.49c1.024-.493 2.437-1.364 3.939-2.866c1.5-1.501 2.372-2.915 2.866-3.94c.247-.512.4-.927.49-1.209a5 5 0 0 0 .108-.389l.003-.014l.096-.496l1.253 1.253l-.032.103a11 11 0 0 1-.567 1.404c-.56 1.162-1.525 2.717-3.157 4.349c-1.631 1.631-3.187 2.597-4.348 3.156a11 11 0 0 1-1.507.6" fill="currentColor"></path></svg>
+<h4 class="text-2xl font-black text-white letter-spacing-widest">口服药物提醒</h4>
+</div>
+<div class="space-y-4">
+<div class="text-slate-300 bg-slate-900/50 p-3 rounded-lg border border-slate-700">
+<p class="text-2xl font-bold flex items-center justify-center gap-2">
+                                                复方甲氧那明 <span class="text-blue-400">2 粒</span>
+</p>
+<p class="text-sm mt-1 text-slate-400">饭后 30 分钟服用，温开水送服</p>
+</div>
+<p class="text-sm text-indigo-300 font-medium">🗣️ 语音播报: "陈志强先生，请按时吃药..."</p>
+</div>
+<div class="mt-6 flex gap-2">
+<div class="w-2 h-2 rounded-full bg-blue-500"></div>
+<div class="w-2 h-2 rounded-full bg-slate-600"></div>
+<div class="w-2 h-2 rounded-full bg-slate-600"></div>
+</div>
+</div>
+<button class="absolute left-0 top-1/2 -translate-y-1/2 p-2 text-white/30 hover:text-white transition group-hover:block hidden">
+<svg aria-hidden="true" class="iconify text-4xl iconify--solar" data-icon="solar:alt-arrow-left-bold" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m8.165 11.63l6.63-6.43C15.21 4.799 16 5.042 16 5.57v12.86c0 .528-.79.771-1.205.37l-6.63-6.43a.5.5 0 0 1 0-.74" fill="currentColor"></path></svg>
+</button>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 p-2 text-white/30 hover:text-white transition group-hover:block hidden">
+<svg aria-hidden="true" class="iconify text-4xl iconify--solar" data-icon="solar:alt-arrow-right-bold" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M15.835 11.63L9.205 5.2C8.79 4.799 8 5.042 8 5.57v12.86c0 .528.79.771 1.205.37l6.63-6.43a.5.5 0 0 0 0-.74" fill="currentColor"></path></svg>
+</button>
+</div>
+<div class="mt-4 p-3 bg-blue-900/40 rounded-lg border border-blue-800/50">
+<p class="text-blue-200 text-xs font-bold mb-1 flex items-center gap-1">
+<svg aria-hidden="true" class="iconify iconify--solar" data-icon="solar:play-circle-bold" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m-1.306-6.154l4.72-2.787c.781-.462.781-1.656 0-2.118l-4.72-2.787C9.934 7.706 9 8.29 9 9.214v5.573c0 .923.934 1.507 1.694 1.059" fill="currentColor" fill-rule="evenodd"></path></svg>
+                                    机器人语音交互逻辑说明:
+                                </p>
+<p class="text-[10px] text-blue-300 leading-normal">
+                                    1. 发现患者后主动唤醒 <br/>
+                                    2. 大字展示核心药品与剂量 <br/>
+                                    3. 播报内容：'陈先生您好，医生为您开具了两种口服药，请核对...'
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 全局操作底部 -->
+<div class="mt-6 flex items-center justify-between border-t border-gray-100 pt-4 bg-white/50 px-2 rounded-b-xl">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-200 transition">
+<svg aria-hidden="true" class="iconify iconify--solar" data-icon="solar:file-download-linear" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><g fill="none"><path d="m15.393 4.054l-.502.557zm3.959 3.563l-.502.557zm2.302 2.537l-.685.305zM3.172 20.828l.53-.53zm17.656 0l-.53-.53zM14 21.25h-4v1.5h4zM2.75 14v-4h-1.5v4zm18.5-.437V14h1.5v-.437zM14.891 4.61l3.959 3.563l1.003-1.115l-3.958-3.563zm7.859 8.952c0-1.689.015-2.758-.41-3.714l-1.371.61c.266.598.281 1.283.281 3.104zm-3.9-5.389c1.353 1.218 1.853 1.688 2.119 2.285l1.37-.61c-.426-.957-1.23-1.66-2.486-2.79zM10.03 2.75c1.582 0 2.179.012 2.71.216l.538-1.4c-.852-.328-1.78-.316-3.248-.316zm5.865.746c-1.086-.977-1.765-1.604-2.617-1.93l-.537 1.4c.532.204.98.592 2.15 1.645zM10 21.25c-1.907 0-3.261-.002-4.29-.14c-1.005-.135-1.585-.389-2.008-.812l-1.06 1.06c.748.75 1.697 1.081 2.869 1.239c1.15.155 2.625.153 4.489.153zM1.25 14c0 1.864-.002 3.338.153 4.489c.158 1.172.49 2.121 1.238 2.87l1.06-1.06c-.422-.424-.676-1.004-.811-2.01c-.138-1.027-.14-2.382-.14-4.289zM14 22.75c1.864 0 3.338.002 4.489-.153c1.172-.158 2.121-.49 2.87-1.238l-1.06-1.06c-.424.422-1.004.676-2.01.811c-1.027.138-2.382.14-4.289.14zM21.25 14c0 1.907-.002 3.262-.14 4.29c-.135 1.005-.389 1.585-.812 2.008l1.06 1.06c.75-.748 1.081-1.697 1.239-2.869c.155-1.15.153-2.625.153-4.489zm-18.5-4c0-1.907.002-3.261.14-4.29c.135-1.005.389-1.585.812-2.008l-1.06-1.06c-.75.748-1.081 1.697-1.239 2.869C1.248 6.661 1.25 8.136 1.25 10zm7.28-8.75c-1.875 0-3.356-.002-4.511.153c-1.177.158-2.129.49-2.878 1.238l1.06 1.06c.424-.422 1.005-.676 2.017-.811c1.033-.138 2.395-.14 4.312-.14z" fill="currentColor"></path><path d="M13 2.5V5c0 2.357 0 3.536.732 4.268S15.643 10 18 10h4" stroke="currentColor" stroke-width="1.5"></path><path d="M8.5 13.5v5m0 0l2-1.875m-2 1.875l-2-1.875" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></g></svg> 打印病历
+                </button>
+<button class="flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-200 transition">
+<svg aria-hidden="true" class="iconify iconify--solar" data-icon="solar:printer-linear" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><g fill="none"><path d="M6 17.983c-1.553-.047-2.48-.22-3.121-.862C2 16.243 2 14.828 2 12s0-4.243.879-5.121C3.757 6 5.172 6 8 6h8c2.828 0 4.243 0 5.121.879C22 7.757 22 9.172 22 12s0 4.243-.879 5.121c-.641.642-1.567.815-3.121.862" stroke="currentColor" stroke-width="1.5"></path><path d="M9 10H6m13 4H5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path><path d="m17.121 2.879l-.53.53zm-10.242 0l.53.53zm0 18.242l.53-.53zM18.75 14a.75.75 0 0 0-1.5 0zm-12 0a.75.75 0 0 0-1.5 0zm10.5 2c0 1.435-.002 2.436-.103 3.192c-.099.734-.28 1.122-.556 1.399l1.06 1.06c.603-.601.861-1.36.983-2.26c.118-.878.116-1.998.116-3.391zM12 22.75c1.393 0 2.513.002 3.392-.116c.9-.122 1.658-.38 2.26-.982L16.59 20.59c-.277.277-.665.457-1.4.556c-.755.101-1.756.103-3.191.103zm0-20c1.435 0 2.437.002 3.192.103c.734.099 1.122.28 1.399.556l1.06-1.06c-.601-.603-1.36-.861-2.26-.982c-.878-.119-1.998-.117-3.391-.117zm0-1.5c-1.393 0-2.513-.002-3.392.117c-.9.12-1.658.38-2.26.981L7.41 3.41c.277-.277.665-.457 1.4-.556c.754-.101 1.756-.103 3.191-.103zM5.25 16c0 1.393-.002 2.513.117 3.392c.12.9.38 1.658.981 2.26L7.41 20.59c-.277-.277-.457-.665-.556-1.4c-.101-.755-.103-1.756-.103-3.191zM12 21.25c-1.435 0-2.437-.002-3.192-.103c-.734-.099-1.122-.28-1.399-.556l-1.06 1.06c.601.603 1.36.861 2.26.983c.878.118 1.998.116 3.391.116zm6.732-15.273c-.046-1.542-.208-2.757-1.08-3.629L16.59 3.41c.41.41.595 1.049.642 2.614zm-11.965.046c.047-1.565.231-2.203.642-2.614l-1.06-1.06c-.873.871-1.035 2.086-1.081 3.628zM18.75 16v-2h-1.5v2zm-12 0v-2h-1.5v2z" fill="currentColor"></path><circle cx="17" cy="10" fill="currentColor" r="1"></circle><path d="M15 16.5H9m4 2.5H9" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></g></svg> 打印处方
+                </button>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2 rounded-lg text-sm font-bold text-gray-700 border border-gray-300 hover:bg-gray-100 transition">暂存当前诊疗</button>
+<button class="px-8 py-2 rounded-lg text-sm font-bold bg-green-600 text-white hover:bg-green-700 shadow-md shadow-green-100 transition">结束接诊 下一位</button>
+</div>
+</div>
+</main>
+<!-- 确认弹窗模拟 -->
+<div class="fixed bottom-10 left-1/2 -translate-x-1/2 translate-y-20 bg-green-600 text-white px-8 py-4 rounded-full shadow-2xl font-bold flex items-center gap-3 transition-all opacity-0 pointer-events-none" id="toast">
+<svg aria-hidden="true" class="iconify text-2xl iconify--solar" data-icon="solar:check-circle-bold" height="1em" role="img" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-5.97-3.03a.75.75 0 0 1 0 1.06l-5 5a.75.75 0 0 1-1.06 0l-2-2a.75.75 0 1 1 1.06-1.06l1.47 1.47l2.235-2.235L14.97 8.97a.75.75 0 0 1 1.06 0" fill="currentColor" fill-rule="evenodd"></path></svg>
+<span>数据已成功流转至机器人终端 (MedLink-RT-402)</span>
+</div>
+<script>
+        function switchTab(tabName) {
+            // 隐藏所有内容
+            document.getElementById('content-overview').classList.add('hidden');
+            document.getElementById('content-diagnosis').classList.add('hidden');
+            document.getElementById('content-prescription').classList.add('hidden');
+            
+            // 移除所有 Tab 激活样式
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.classList.remove('tab-active');
+                btn.classList.add('text-gray-500');
+            });
+
+            // 显示当前内容
+            document.getElementById('content-' + tabName).classList.remove('hidden');
+            document.getElementById('tab-' + tabName).classList.add('tab-active');
+            document.getElementById('tab-' + tabName).classList.remove('text-gray-500');
+        }
+
+        function addTag(text) {
+            const textarea = document.getElementById('chief-complaint');
+            const currentVal = textarea.value.trim();
+            if (currentVal.length === 0) {
+                textarea.value = text;
+            } else if (!currentVal.includes(text)) {
+                textarea.value = currentVal + "，" + text;
+            }
+            updateWordCount();
+        }
+
+        function updateWordCount() {
+            const textarea = document.getElementById('chief-complaint');
+            document.getElementById('word-count').innerText = textarea.value.length;
+        }
+
+        document.getElementById('chief-complaint').addEventListener('input', updateWordCount);
+
+        function simulateSync() {
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<span class="iconify animate-spin text-2xl" data-icon="solar:restart-linear"></span> 正在同步数据流...';
+            btn.classList.replace('bg-white', 'bg-green-100');
+            btn.classList.replace('text-indigo-600', 'text-green-700');
+
+            setTimeout(() => {
+                btn.innerHTML = '<span class="iconify text-2xl" data-icon="solar:check-circle-bold"></span> 同步成功';
+                btn.classList.replace('bg-green-100', 'bg-green-500');
+                btn.classList.replace('text-green-700', 'text-white');
+                
+                const toast = document.getElementById('toast');
+                toast.classList.replace('translate-y-20', 'translate-y-0');
+                toast.classList.replace('opacity-0', 'opacity-100');
+
+                setTimeout(() => {
+                    toast.classList.replace('translate-y-0', 'translate-y-20');
+                    toast.classList.replace('opacity-100', 'opacity-0');
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('bg-green-500', 'text-white');
+                    btn.classList.add('bg-white', 'text-indigo-600');
+                }, 3000);
+            }, 1500);
+        }
+    </script>
+</body></html>
